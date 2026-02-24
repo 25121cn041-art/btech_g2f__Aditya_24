@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    float a, b, c;
+
+    // 1. Input the three sides
+    printf("Enter three sides of the triangle: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    // 2. Check for validity
+    // Triangle Inequality Theorem: a+b>c, a+c>b, b+c>a
+    if((a + b > c) && (a + c > b) && (b + c > a)) {
+        printf("Valid Triangle.\n");
+
+        // 3. Analyze type of triangle
+        if(a == b && b == c) {
+            printf("Type: Equilateral Triangle (All sides equal).\n");
+        }
+        else if(a == b || b == c || a == c) {
+            printf("Type: Isosceles Triangle (Two sides equal).\n");
+        }
+        else {
+            printf("Type: Scalene Triangle (No sides equal).\n");
+        }
+    }
+    else {
+        printf("Invalid Triangle. The given sides cannot form a triangle.\n");
+    }
+
+    return 0;
+}
